@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="user-container">
+      <div class="user-summary">
+        <img src="./images/image-jeremy.png" alt="user profile photo" id="profilePhoto">
+        <span class="small">Report for</span>
+        <p class="name">Jeremy Robson</p>
+      </div>
+      <div class="user-options">
+        <p class="timespan active" id="daily">Daily</p>
+        <p class="timespan" id="weekly">Weekly</p>
+        <p class="timespan" id="monthly">Monthly</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-decor" id="workCardBg">
+          <img src="./images/icon-work.svg" alt="" id="workIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Work</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily"> 5hrs </p> <!-- daily -->
+            <p class="small show-daily">Yesterday - 7hrs </p>
+            <!--daily-->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">32hrs</p> <!-- weekly -->
+            <p class="small show-weekly">Last Week - 36hrs</p> <!-- weekly -->
+          </div>
+          <div class="details">
+            <p class="time show-monthly">103hrs</p> <!-- monthly -->
+            <p class="small show-monthly">Last Month - 128hrs</p> <!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-decor" id="playCardBg">
+          <img src="./images/icon-play.svg" alt="" id="playIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Play</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily">1hr</p> <!-- daily -->
+            <p class="small show-daily">Yesterday - 2hrs</p> <!-- daily -->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">10hrs</p> <!-- weekly -->
+            <p class="small show-weekly">Last Week - 8hrs</p> <!-- weekly -->
+          </div>
+          <div class="details">
+            <p class="time show-monthly">23hrs</p> <!-- monthly -->
+            <p class="small show-monthly">Last Month - 29hrs</p> <!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-decor" id="studyCardBg">
+          <img src="./images/icon-study.svg" alt="" id="studyIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Study</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily">0hrs</p><!-- daily -->
+            <p class="small show-daily">Yesterday - 1hr</p><!-- daily -->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">4hrs</p><!-- weekly -->
+            <p class="small show-weekly">Last Week - 7hrs</p><!-- weekly -->
+          </div>
+          <div class="details">
+            <p class="time show-monthly">13hrs</p><!-- monthly -->
+            <p class="small show-monthly">Last Month - 19hrs</p><!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-decor" id="exerciseCardBg">
+          <img src="./images/icon-exercise.svg" alt="" id="exerciseIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Exercise</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily">1hr</p><!-- daily -->
+            <p class="small show-daily">Yesterday - 1hr</p><!-- daily -->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">4hrs</p><!-- weekly -->
+            <p class="small show-weekly">Last Week - 5hrs</p><!-- weekly -->
+          </div>
+          <div class="details">
+            <p class="time show-monthly">11hrs</p><!-- monthly -->
+            <p class="small show-monthly">Last Month - 18hrs</p><!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-decor" id="socialCardBg">
+          <img src="./images/icon-social.svg" alt="" id="socialIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Social</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily">1hr</p><!-- daily -->
+            <p class="small show-daily">Yesterday - 3hrs</p><!-- daily -->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">5hrs</p><!-- weekly -->
+            <p class="small show-weekly">Last Week - 10hrs</p><!-- weekly -->
+          </div>
+
+          <div class="details">
+            <p class="time show-monthly">21hrs</p><!-- monthly -->
+            <p class="small show-monthly">Last Month - 23hrs</p><!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-decor" id="selfcareCardBg">
+          <img src="./images/icon-self-care.svg" alt="" id="selfcareIcon" class="card-icon">
+        </div>
+        <div class="card-detail">
+          <div class="category">
+            <p class="title">Self Care</p>
+            <img src="images/icon-ellipsis.svg" alt="more" class="ellipsis">
+          </div>
+          <div class="details">
+            <p class="time show-daily">0hrs</p><!-- daily -->
+            <p class="small show-daily">Yesterday - 1hr</p><!-- daily -->
+          </div>
+          <div class="details">
+            <p class="time show-weekly">2hrs</p><!-- weekly -->
+            <p class="small show-weekly">Last Week - 2hrs</p><!-- weekly -->
+          </div>
+
+          <div class="details">
+            <p class="time show-monthly">7hrs</p><!-- monthly -->
+            <p class="small show-monthly">Last Month - 11hrs</p><!-- monthly -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="author">Frontend Mentor</a>.
+    Coded by <a href="'https://www.vercel.com/dainaa" class="author">Daina</a>.
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

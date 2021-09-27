@@ -1,0 +1,245 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+
+/* Variables */
+:root{
+    --blue: hsl(246, 80%, 60%);
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green: hsl(145, 58%, 55%);
+    --violet: hsl(264, 64%, 52%);
+    --soft-orange: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+    --white-ish-blue: rgb(241,244,255);
+    --basically-white: rgb(251,255,255);
+}
+/* Presets */
+
+html{
+    height:100%;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
+/* Typography */
+.small{
+    font-size: 15px;
+    color: var(--desaturated-blue);
+    margin:1em 0;
+}
+.title{
+    font-size: 18px;
+    color: var(--white-ish-blue);
+}
+.time{
+    font-size: 2.5em;
+    font-weight:normal;
+    color: var(--basically-white);
+    opacity:0.9;
+    margin:0;
+}
+.name{
+    font-size:2em;
+    color: var(--basically-white);
+    margin:0;
+    margin-top:0.2em;
+}
+.timespan{
+    font-size:18px;
+    color: var(--desaturated-blue);
+}
+
+/* Layout */
+body{
+    min-height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+.wrapper{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap:1.5rem;
+    padding: 1em;
+    max-width:950px;
+}
+
+
+.cards{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:1.5rem;
+    justify-content: center;
+}
+
+/* Styling and Colors */
+body{
+    background-color: hsl(226, 43%, 10%);
+}
+
+.user-summary{
+    background-color: var(--blue);
+    border-radius: 12px;
+    min-height:50%;
+    padding: 2em;
+    position: relative;
+    z-index: 2;
+}
+
+.user-options{
+    background-color: var(--dark-blue);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding:2em;
+    position:relative;
+    z-index: 1;
+    height:7.5em;
+    transform: translateY(-1.8rem);
+
+}
+
+.card{
+    display: flex;
+    /* min-width: 250px; 
+    min-height: 245px; */
+    flex-direction: column;
+    
+}
+
+.card-decor{
+    text-align: right;
+    padding-right: 1em;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index:-1; 
+}
+
+.card-detail{
+    display:flex;
+    flex-direction: column;
+    padding-left: 2em;
+    padding-right:2em;
+    padding-top: 0.5em;
+    padding-bottom:1em;
+
+    border-radius: 12px;
+    z-index:1;
+    transform: translateY(-1.8em);
+
+    background-color: var(--dark-blue);
+}
+
+.category{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ellipsis{
+    object-fit: contain;
+}
+
+.show-daily, .show-monthly{
+    display: none;
+}
+
+.card-icon{
+    width: 4rem;
+    transform: translateY(-8px);
+}
+
+#profilePhoto{
+    width: 80px;
+    display: block;
+    border: 3px solid var(--basically-white);
+    border-radius: 60%;
+    padding:0;
+    margin:0;
+    margin-bottom:1.5em;
+}
+
+#exerciseIcon{
+    width: 6rem;
+    /* adjustment necessary due to svg sizes being different */
+}
+#socialIcon{
+    width:3rem; 
+    /* adjustment necessary due to svg sizes being different */
+}
+
+#workCardBg{
+    background-color: var(--light-red-work);
+}
+#playCardBg{
+    background-color: var(--soft-blue);
+}
+#studyCardBg{
+    background-color: var(--light-red-study);
+}
+#exerciseCardBg{
+    background-color: var(--lime-green);
+}
+#socialCardBg{
+    background-color: var(--violet);
+}
+#selfcareCardBg{
+    background-color: var(--soft-orange);
+}
+
+
+/* Media Queries */
+@media (max-width: 400px){
+
+    body{
+        overflow: scroll;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        padding:0;
+    }
+}
+
+/* Functionalities */
+
+.timespan:hover, .timespan:focus{
+    cursor: pointer;
+    color:var(--basically-white);
+}
+.ellipsis:hover, .ellipsis:focus{
+    cursor:pointer;
+    filter: invert(99%) sepia(3%) saturate(1643%) hue-rotate(195deg) brightness(119%) contrast(100%);
+}
+.card:hover, .card:focus{
+    cursor:pointer;
+    filter:brightness(120%);
+}
+
+.active{
+    color: var(--basically-white);
+}
+
+/* other */
+
+.attribution{
+    font-family: 'Rubik', sans-serif;
+    font-size:10px;
+    color: var(--pale-blue)
+}
+a{
+    text-decoration: none;
+}
